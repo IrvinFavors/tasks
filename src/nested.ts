@@ -141,7 +141,11 @@ export function makeAnswers(questions: Question[]): Answer[] {
  */
 export function publishAll(questions: Question[]): Question[] {
     return questions.map(
-        (question: Question): Question => ({ ...question, published: true })
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options],
+            published: true
+        })
     );
 }
 
@@ -179,7 +183,10 @@ export function addNewQuestion(
         published: false
     };
     const newQuestions = questions.map(
-        (question: Question): Question => ({ ...question })
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options]
+        })
     );
     newQuestions.push(newQuestion);
     return newQuestions;
@@ -196,7 +203,10 @@ export function renameQuestionById(
     newName: string
 ): Question[] {
     const newQuestions = questions.map(
-        (question: Question): Question => ({ ...question })
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options]
+        })
     );
     const index = newQuestions.findIndex(
         (question: Question): boolean => question.id === targetId
@@ -218,7 +228,10 @@ export function changeQuestionTypeById(
     newQuestionType: QuestionType
 ): Question[] {
     const newQuestions = questions.map(
-        (question: Question): Question => ({ ...question })
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options]
+        })
     );
     const index = newQuestions.findIndex(
         (question: Question): boolean => question.id === targetId
@@ -245,7 +258,22 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    return [];
+    const newQuestions = questions.map(
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options]
+        })
+    );
+    const index: number = newQuestions.findIndex(
+        (question: Question): boolean => question.id === targetId
+    );
+    if (index !== -1) {
+        if (targetOptionIndex === -1)
+            newQuestions[index].options.push(newOption);
+        else
+            newQuestions[index].options.splice(targetOptionIndex, 1, newOption);
+    }
+    return newQuestions;
 }
 
 /***
@@ -260,7 +288,10 @@ export function duplicateQuestionInArray(
     newId: number
 ): Question[] {
     const newQuestions = questions.map(
-        (question: Question): Question => ({ ...question })
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options]
+        })
     );
     const index: number = newQuestions.findIndex(
         (question: Question): boolean => question.id === targetId
