@@ -21,9 +21,9 @@ function App(): JSX.Element {
             </header>
             <h1>Testing</h1>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
+                <li>N/A</li>
+                <li>N/A</li>
+                <li>N/A</li>
             </ul>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
