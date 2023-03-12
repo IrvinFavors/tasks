@@ -5,22 +5,21 @@ export function StartAttempt(): JSX.Element {
     const [attempts, setAttempts] = useState<number>(4);
     const [inProgress, setInProgress] = useState<boolean>(false);
 
-    function decreaseAttempts(): void {
+    function startQuiz(): void {
+        setInProgress(true);
         setAttempts(attempts - 1);
     }
 
     function increaseAttempts(): void {
         setAttempts(attempts + 1);
     }
+
     return (
         <div>
             Current Attempts: <span>{attempts}</span>
             <div>
                 <Button
-                    onClick={() => {
-                        setInProgress(true);
-                        decreaseAttempts;
-                    }}
+                    onClick={startQuiz}
                     disabled={inProgress || attempts === 0}
                 >
                     Start Quiz

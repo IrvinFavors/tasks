@@ -13,16 +13,27 @@ function App(): JSX.Element {
         <div className="App">
             <header className="App-header">
                 <img src="src/images/IMG-0061.jpg" alt="Lion Logo" />
-                React Hooks and TypeScript
+                React Hooks and TypeScript - CISC275
                 <br /> Irvin Favors
                 <Button onClick={() => console.log("Hello World!")}>
                     Log Hello World
                 </Button>
             </header>
+            <h1>Testing</h1>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
+            <Counter></Counter>
+            <RevealAnswer></RevealAnswer>
+            <ChangeType></ChangeType>
+            <StartAttempt></StartAttempt>
+            <TwoDice></TwoDice>
         </div>
     );
 }
