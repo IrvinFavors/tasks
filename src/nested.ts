@@ -211,7 +211,7 @@ export function renameQuestionById(
     const index = newQuestions.findIndex(
         (question: Question): boolean => question.id === targetId
     );
-    newQuestions[index].name = newName;
+    if (index !== -1) newQuestions[index].name = newName;
     return newQuestions;
 }
 
@@ -236,7 +236,7 @@ export function changeQuestionTypeById(
     const index = newQuestions.findIndex(
         (question: Question): boolean => question.id === targetId
     );
-    newQuestions[index].type = newQuestionType;
+    if (index !== -1) newQuestions[index].type = newQuestionType;
     if (newQuestions[index].type !== "multiple_choice_question")
         newQuestions[index].options = [];
     return newQuestions;
@@ -267,8 +267,12 @@ export function editOption(
     const index: number = newQuestions.findIndex(
         (question: Question): boolean => question.id === targetId
     );
-    if (targetOptionIndex === -1) newQuestions[index].options.push(newOption);
-    else newQuestions[index].options.splice(targetOptionIndex, 1, newOption);
+    if (index !== -1) {
+        if (targetOptionIndex === -1)
+            newQuestions[index].options.push(newOption);
+        else
+            newQuestions[index].options.splice(targetOptionIndex, 1, newOption);
+    }
     return newQuestions;
 }
 

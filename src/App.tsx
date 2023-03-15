@@ -1,40 +1,55 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
-import { ChangeType } from "./components/ChangeType";
-import { RevealAnswer } from "./components/RevealAnswer";
-import { StartAttempt } from "./components/StartAttempt";
-import { TwoDice } from "./components/TwoDice";
-import { CycleHoliday } from "./components/CycleHoliday";
-import { Counter } from "./components/Counter";
 
 function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
                 <img src="src/images/IMG-0061.jpg" alt="Lion Logo" />
-                React Hooks and TypeScript - CISC275
+                React Hooks and TypeScript
                 <br /> Irvin Favors
                 <Button onClick={() => console.log("Hello World!")}>
                     Log Hello World
                 </Button>
             </header>
-            <h1>Testing</h1>
-            <ul>
-                <li>N/A</li>
-                <li>N/A</li>
-                <li>N/A</li>
-            </ul>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
-            <Counter></Counter>
-            <RevealAnswer></RevealAnswer>
-            <ChangeType></ChangeType>
-            <StartAttempt></StartAttempt>
-            <TwoDice></TwoDice>
-            <CycleHoliday></CycleHoliday>
+            <b>Hello World</b>
+            <h1>Sophmore Year Schedule</h1>
+
+            <Container>
+                <Row>
+                    <Col>
+                        <b>Fall 2022</b>
+                        <div className="App">
+                            <div>
+                                <p>
+                                    random text because having two lists fails.
+                                </p>
+                                <div className="rectangle-Red"></div>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col>
+                        <b>Spring 2023</b>
+                        <div className="App">
+                            <div>
+                                <ul>
+                                    <li>CISC275</li>
+                                    <li>CISC361</li>
+                                    <li>MATH210</li>
+                                    <li>POSC370</li>
+                                    <li>CRJU110</li>
+                                </ul>
+                                <div className="rectangle-Red"></div>
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 }
