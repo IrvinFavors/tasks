@@ -34,6 +34,7 @@ function App(): JSX.Element {
             <ChangeType></ChangeType>
             <StartAttempt></StartAttempt>
             <TwoDice></TwoDice>
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }

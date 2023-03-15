@@ -30,12 +30,6 @@ export function TwoDice(): JSX.Element {
             {left !== right && (
                 <Button onClick={() => setRight(d6)}>Roll Right</Button>
             )}
-            {left === right && (
-                <Button onClick={() => setLeft(d6)}>Roll Left</Button>
-            )}
-            {left === right && (
-                <Button onClick={() => setRight(d6)}>Roll Right</Button>
-            )}
         </div>
     );
 }
