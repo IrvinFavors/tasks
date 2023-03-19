@@ -16,15 +16,11 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                <img src="src/images/IMG-0061.jpg" alt="Lion Logo" />
                 React Hooks and TypeScript - CISC275
                 <br /> Irvin Favors
-                <Button onClick={() => console.log("Hello World!")}>
-                    Log Hello World
-                </Button>
             </header>
             <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
+            {<DoubleHalf></DoubleHalf>}
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
